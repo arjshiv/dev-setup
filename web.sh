@@ -19,6 +19,7 @@ fi
 brew update
 
 # brew install node
+brew tap homebrew/versions
 brew install homebrew/versions/node4-lts
 
 # Remove outdated versions from the cellar.
