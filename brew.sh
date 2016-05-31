@@ -33,15 +33,20 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 # Install Bash 4.
-brew install bash
+# brew install bash
 brew tap homebrew/versions
-brew install bash-completion2
+# brew install bash-completion2
+
+# Install ZSH
+brew install zsh
+# install zsh extensions
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # We installed the new shell, now we have to activate it
 echo "Adding the newly installed shell to the list of allowed shells"
 # Prompts for password
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 # Change to the new shell, prompts for password
-chsh -s /usr/local/bin/bash
+chsh -s /usr/local/bin/zsh
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -139,14 +144,15 @@ heroku update
 brew install caskroom/cask/brew-cask
 
 # Core casks
-brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="~/Applications" iterm2
+# brew cask install --appdir="/Applications" alfred
+brew cask install --appdir="~/Applications" iterm2-beta
 brew cask install --appdir="~/Applications" java
 brew cask install --appdir="~/Applications" xquartz
 
 # Development tool casks
 brew cask install --appdir="/Applications" sublime-text3
 brew cask install --appdir="/Applications" atom
+brew cask install --appdir="/Applications" visual-studio-code
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" heroku-toolbelt
@@ -166,7 +172,7 @@ brew cask install --appdir="/Applications" evernote
 #brew cask install --appdir="/Applications" mactex
 
 # Link cask apps to Alfred
-brew cask alfred link
+# brew cask alfred link
 
 # Install Docker, which requires virtualbox
 brew install docker
